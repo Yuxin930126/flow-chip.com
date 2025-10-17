@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowchip | Advanced Semiconductor Solutions</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    const originalConsoleWarn = console.warn;
+    console.warn = function(message, ...args) {
+      if (typeof message === 'string' && message.includes('cdn.tailwindcss.com should not be used in production')) {
+        return;
+      }
+      originalConsoleWarn.apply(console, [message, ...args]);
+    };
+  </script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f4c81',
+            secondary: '#f0f4f8',
+            accent: '#d9e2ec',
+            dark: '#102a43',
+            light: '#ffffff'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+      }
+    }
+  </style>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-light text-dark antialiased">
+  <!-- 导航栏 -->
+  <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <!-- 加大加粗FLOWCHIP字体，字体大小为3xl（约48px），字重为700（加粗） -->
+        <a href="#" class="text-3xl font-bold tracking-tight">FLOWCHIP</a>
+        
+        <nav class="hidden md:flex space-x-8">
+          <a href="#work" class="text-sm uppercase tracking-widest hover:text-primary transition-colors">Featured Work</a>
+          <a href="#services" class="text-sm uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+          <a href="#products" class="text-sm uppercase tracking-widest hover:text-primary transition-colors">Products</a>
+          <a href="#about" class="text-sm uppercase tracking-widest hover:text-primary transition-colors">About</a>
+          <a href="#contact" class="text-sm uppercase tracking-widest hover:text-primary transition-colors">Contact</a>
+        </nav>
+        
+        <button class="md:hidden text-xl" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="md:hidden hidden bg-light border-t border-accent/30" id="mobile-menu">
+      <div class="container mx-auto px-4 py-4 space-y-4">
+        <a href="#work" class="block text-sm uppercase tracking-widest hover:text-primary transition-colors">Featured Work</a>
+        <a href="#services" class="block text-sm uppercase tracking-widest hover:text-primary transition-colors">Services</a>
+        <a href="#products" class="block text-sm uppercase tracking-widest hover:text-primary transition-colors">Products</a>
+        <a href="#about" class="block text-sm uppercase tracking-widest hover:text-primary transition-colors">About</a>
+        <a href="#contact" class="block text-sm uppercase tracking-widest hover:text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 主页/英雄区域 -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <img src="https://picsum.photos/id/180/800/600" alt="Advanced semiconductor technology" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+              <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-light leading-tight text-balance mb-8">
+                Innovating the <span class="text-primary font-normal">Future</span> of Semiconductors
+              </h1>
+              <p class="text-[clamp(1rem,2vw,1.25rem)] text-dark/70 leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0">
+                Flowchip delivers cutting-edge semiconductor solutions that power the next generation of technology, from IoT devices to advanced computing systems.
+              </p>
+              <!-- 改为"EXPLORE MORE"并链接到FEATURED WORK板块 -->
+              <a href="#work" class="inline-block border border-primary text-primary px-8 py-3 text-sm uppercase tracking-widest hover:bg-primary hover:text-light transition-colors">
+                Explore More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 代表性工作 -->
+    <section id="work" class="py-20 bg-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-light mb-4">Featured Work</h2>
+          <p class="text-dark/70 max-w-2xl mx-auto">A selection of our most innovative projects and partnerships across various industries.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group card-hover">
+            <div class="overflow-hidden mb-4 rounded-lg">
+              <img src="https://picsum.photos/id/160/800/600" alt="5G semiconductor solution" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="text-lg font-medium mb-1">5G Network Chips</h3>
+            <p class="text-sm text-dark/70 mb-3">Telecommunications</p>
+            <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">View Project <i class="fa fa-arrow-right ml-2"></i></a>
+          </div>
+          
+          <div class="group card-hover">
+            <div class="overflow-hidden mb-4 rounded-lg">
+              <img src="https://picsum.photos/id/119/800/600" alt="AI processing unit" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="text-lg font-medium mb-1">AI Accelerators</h3>
+            <p class="text-sm text-dark/70 mb-3">Artificial Intelligence</p>
+            <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">View Project <i class="fa fa-arrow-right ml-2"></i></a>
+          </div>
+          
+          <div class="group card-hover">
+            <div class="overflow-hidden mb-4 rounded-lg">
+              <img src="https://picsum.photos/id/180/800/600" alt="IoT chipset" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="text-lg font-medium mb-1">IoT Microcontrollers</h3>
+            <p class="text-sm text-dark/70 mb-3">Internet of Things</p>
+            <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">View Project <i class="fa fa-arrow-right ml-2"></i></a>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <!-- 链接到新网页 all-projects.html -->
+          <a href="all-projects.html" class="inline-block border border-primary text-primary px-8 py-3 text-sm uppercase tracking-widest hover:bg-primary hover:text-light transition-colors">
+            View All Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服务（只保留三个模块） -->
+    <section id="services" class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-light mb-4">Our Services</h2>
+          <p class="text-dark/70 max-w-2xl mx-auto">Comprehensive semiconductor solutions tailored to your specific technological needs.</p>
+        </div>
+        
+        <!-- 只保留三个服务模块，一行三列 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 border border-accent/30 rounded-lg card-hover">
+            <i class="fa fa-microchip text-3xl mb-6 text-primary"></i>
+            <h3 class="text-xl font-medium mb-4">Chip Design</h3>
+            <p class="text-dark/70 leading-relaxed">
+              Custom semiconductor design services from concept to production, optimized for performance and efficiency.
+            </p>
+          </div>
+          
+          <div class="bg-white p-8 border border-accent/30 rounded-lg card-hover">
+            <i class="fa fa-cogs text-3xl mb-6 text-primary"></i>
+            <h3 class="text-xl font-medium mb-4">Prototyping</h3>
+            <p class="text-dark/70 leading-relaxed">
+              Rapid prototyping services to validate your semiconductor designs before full-scale production.
+            </p>
+          </div>
+          
+          <div class="bg-white p-8 border border-accent/30 rounded-lg card-hover">
+            <i class="fa fa-industry text-3xl mb-6 text-primary"></i>
+            <h3 class="text-xl font-medium mb-4">Manufacturing</h3>
+            <p class="text-dark/70 leading-relaxed">
+              End-to-end semiconductor manufacturing with strict quality control and optimization.
+            </p>
+          </div>
+        </div>
+        <!-- 已移除View All Services按钮 -->
+      </div>
+    </section>
+
+    <!-- 产品 -->
+    <section id="products" class="py-20 bg-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-light mb-4">Our Products</h2>
+          <p class="text-dark/70 max-w-2xl mx-auto">Innovative semiconductor products designed for the most demanding technological applications.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group bg-white rounded-lg overflow-hidden card-hover">
+            <div class="overflow-hidden">
+              <img src="https://picsum.photos/id/160/800/600" alt="Quantum processor" class="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-medium mb-2">QuantumX Processor</h3>
+              <p class="text-sm text-dark/70 mb-4">Next-generation quantum computing processor with unprecedented performance.</p>
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="group bg-white rounded-lg overflow-hidden card-hover">
+            <div class="overflow-hidden">
+              <img src="https://picsum.photos/id/119/800/600" alt="5G chipset" class="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-medium mb-2">Nexus5G Chipset</h3>
+              <p class="text-sm text-dark/70 mb-4">Advanced 5G communication chipset with enhanced data transfer capabilities.</p>
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="group bg-white rounded-lg overflow-hidden card-hover">
+            <div class="overflow-hidden">
+              <img src="https://picsum.photos/id/180/800/600" alt="IoT microcontroller" class="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-medium mb-2">IoT Core Microcontroller</h3>
+              <p class="text-sm text-dark/70 mb-4">Energy-efficient microcontroller designed for IoT applications with extended battery life.</p>
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">Learn More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <!-- 链接到新网页 all-products.html -->
+          <a href="all-products.html" class="inline-block border border-primary text-primary px-8 py-3 text-sm uppercase tracking-widest hover:bg-primary hover:text-light transition-colors">
+            View All Products
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-light mb-6">About Flowchip</h2>
+            <p class="text-dark/80 mb-6 leading-relaxed">
+              Founded in 2010, Flowchip has established itself as a leader in semiconductor innovation, pushing the boundaries of what's possible in microelectronics.
+            </p>
+            <p class="text-dark/80 mb-6 leading-relaxed">
+              Our team of engineers and scientists are dedicated to developing advanced semiconductor solutions that power the technologies of tomorrow, from artificial intelligence to renewable energy systems.
+            </p>
+            <p class="text-dark/80 mb-8 leading-relaxed">
+              With research facilities across three continents, we collaborate with leading tech companies and academic institutions to drive semiconductor innovation forward.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">
+                <i class="fa fa-twitter mr-2"></i> Twitter
+              </a>
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">
+                <i class="fa fa-linkedin mr-2"></i> LinkedIn
+              </a>
+              <a href="#" class="text-sm uppercase tracking-widest text-primary hover:text-primary/70 transition-colors">
+                <i class="fa fa-youtube-play mr-2"></i> YouTube
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="https://picsum.photos/id/1070/800/1000" alt="Flowchip research lab" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md">
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 max-w-xs border border-accent rounded shadow-sm">
+              <p class="italic text-dark/80">"Innovation in semiconductors drives progress in all areas of technology."</p>
+              <p class="text-sm font-medium mt-2">— Dr. Elena Richards, CTO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="py-20 bg-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-light mb-6">Get In Touch</h2>
+            <p class="text-dark/80 mb-8 leading-relaxed">
+              Interested in our semiconductor solutions or want to discuss a potential collaboration? Reach out to our team of experts.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start">
+                <i class="fa fa-map-marker text-xl mt-1 mr-4 text-primary"></i>
+                <p>456 Innovation Drive<br>San Jose, CA 95110<br>United States</p>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-envelope text-xl mr-4 text-primary"></i>
+                <p>contact@flowchip.com</p>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-phone text-xl mr-4 text-primary"></i>
+                <p>+1 (408) 555-0123</p>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-light hover:border-primary transition-colors">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-light hover:border-primary transition-colors">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-light hover:border-primary transition-colors">
+                <i class="fa fa-youtube-play"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-light hover:border-primary transition-colors">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <form class="space-y-6 bg-white p-8 rounded-lg shadow-sm">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                <input type="text" id="name" class="w-full px-4 py-3 border border-accent focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="Your name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-accent focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="Your email">
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium mb-2">Company</label>
+                <input type="text" id="company" class="w-full px-4 py-3 border border-accent focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="Your company">
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-accent focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="Your message"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary text-light px-8 py-3 text-sm uppercase tracking-widest hover:bg-primary/90 transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="py-12 border-t border-accent/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <a href="#" class="text-xl font-semibold mb-4 md:mb-0">FLOWCHIP</a>
+        <p class="text-sm text-dark/70 text-center md:text-right">
+          &copy; 2023 Flowchip Semiconductor. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md');
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+      }
+    });
+
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuToggle.innerHTML = mobileMenu.classList.contains('hidden') 
+        ? '<i class="fa fa-bars"></i>' 
+        : '<i class="fa fa-times"></i>';
+    });
+
+    // 锚点链接平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+          }
+        }
+      });
+    });
+
+    // 滚动时元素显示动画
+    const revealElements = document.querySelectorAll('.grid, section > div > h2, section > div > p');
+    
+    const revealOnScroll = function() {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add('opacity-100', 'translate-y-0');
+          revealElements[i].classList.remove('opacity-0', 'translate-y-10');
+        }
+      }
+    };
+    
+    revealElements.forEach(el => {
+      el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+    });
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
